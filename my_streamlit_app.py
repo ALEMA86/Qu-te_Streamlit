@@ -126,8 +126,8 @@ def main():
         st.write("La colonne 'continent' correspond à la région dont le véhicule est originaire ; nous en avons ici 3 : les USA, l'Europe et le Japon" )
 
         st.subheader("Présentation du dataset par 'continent'") # add a subtitle
-            continent = df['continent'].unique()
-            continent_multiselect = st.multiselect(' ', continent)
+        continent = df['continent'].unique()
+        continent_multiselect = st.multiselect(' ', continent)
 
 
 

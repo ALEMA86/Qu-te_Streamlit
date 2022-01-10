@@ -99,6 +99,34 @@ def main():
         - L'application est accessible en ligne
         - L'analyse est effectuée, avec des commentaires explicatifs
         - Des boutons sont présents pour filtrer par région
-        
+
         """
         )
+
+######################################################################################
+######################################################################################
+###########################     Challenge     ########################################
+######################################################################################
+######################################################################################   
+
+
+    elif choice == "Analyses":
+
+        st.subheader("Heatmap de corrélation") # add a subtitle
+
+
+        # Paramétrage des données pour faire la heatmap de corrélation :
+        corr = df.corr()
+
+        fig = px.imshow(corr, text_auto=True, color_continuous_scale='RdBu_r', origin='upper', aspect = "auto")
+        fig.update_layout(
+        title='Heatmap de corrélation',
+        xaxis_nticks=36)
+        fig.show()
+
+        st.markdown(
+                """
+                Analyse heatmap
+
+                """
+            )

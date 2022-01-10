@@ -115,6 +115,25 @@ def main():
                 # This create a nice grey line between the title and the multiselect menu
         st.write("---------------------------------------------------------")
 
+        st.subheader("Présentation du dataset") # add a subtitle
+        st.write("La colonne 'mpg' représente la consommation de carburant en miles/gallon (mesure impériale)" )
+        st.write("La colonne 'cylinders' correspond au nombre de cylindres de la voiture" )
+        st.write("La colonne 'cubinches' correspond à la cylindrée en cubic inches, sachant que 122 cubic inches correspond à 2 litres" )
+        st.write("La colonne 'hp' se rapporte à la puissance en chevaux du véhicule" )
+        st.write("La colonne 'weightlbs ' correspond au poids du véhicule en livres, sachant que 1 livre équivaut à 0.454 kg)" )
+        st.write("La colonne 'time-to-60' se rapporte au temps en seconde pour passer du 0 à 60 miles/h, soit l'équivalent du 0 à 100 km/h" )
+        st.write("La colonne 'year ' correspond à l'année de commercialisation du véhicule" )
+        st.write("La colonne 'continent' correspond à la région dont le véhicule est originaire ; nous en avons ici 3 : les USA, l'Europe et le Japon" )
+
+        st.subheader("Présentation du dataset par 'continent'") # add a subtitle
+            continent = df['continent'].unique()
+            continent_multiselect = st.multiselect(' ', continent)
+
+
+
+
+
+
         st.subheader("Heatmap de corrélation") # add a subtitle
 
 
@@ -127,7 +146,13 @@ def main():
 
         st.markdown(
                 """
-                Analyse heatmap
+                D'après la heatmap obtenue, si nous ne filtrons pas sur la colonne 'continent', nous remarquons que :
+                - le champ 'mpg' est fortement corrélée avec les champs suivants :
+                    -   cylinders
+                    -   cubinches
+                    -   hp
+                    -   weightlbs
+                - il y a corrélation entre la colonne 'time_to_60' et la colonne 'hp'
 
                 """
             )

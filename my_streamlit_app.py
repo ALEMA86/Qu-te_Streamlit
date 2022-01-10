@@ -51,7 +51,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/murpi/wilddata/master/quests
 
 
 #set the page layout to automatically use full horoizontal size + get and icon and name inside the internet browser
-st.set_page_config(page_title="ABC'S", page_icon=":heart:", layout='wide')
+st.set_page_config(page_title="Quête Stramlit", page_icon=":heart:", layout='wide')
 
 
 def main():

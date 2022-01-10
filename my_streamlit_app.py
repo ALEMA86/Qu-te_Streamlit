@@ -195,8 +195,8 @@ def main():
 
 
         st.subheader("Evolution de la production de voitures dans le temps, par continent") # add a subtitle
-            continent = df['continent'].unique()
-            continent_multiselect = st.multiselect(' ', continent)
+        continent = df['continent'].unique()
+        continent_multiselect = st.multiselect(' ', continent)
 
         st.write("")
         st.write("")

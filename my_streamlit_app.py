@@ -206,22 +206,19 @@ def main():
 
 
         st.subheader("Evolution des cylindrées dans le temps, par continent") # add a subtitle
-        #col1, col2 = st.columns([1, 2])
-        #with col1:
+        col1, col2 = st.columns([1, 2])
+        with col1:
             # Variables to insert df inside the multiselect menu
-            #continent = df['continent'].unique()
-            #continent_multiselect = st.multiselect(' ', continent)
+            continent = df['continent'].unique()
+            continent_multiselect2 = st.multiselect('Filtre sur la région ', continent)
 
-            # Mask to filter dataframe
-            #mask_continent = df['continent'].isin(continent_multiselect)
-            #data = df[mask_continent]
 
-        #with col2:
-            #cylinders_per_yr = df[['year', 'cylinders', 'continent']]
-            #fig1 = px.bar(cylinders_per_yr, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
-            #labels = {'year': 'Période', 'continent': 'Continent', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
-            #fig1.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            #st.plotly_chart(fig1)
+        with col2:
+            cylinders_per_yr = df[['year', 'cylinders'.isin(continent_multiselect2), 'continent']]
+            fig1 = st.bar_chart(cylinders_per_yr, x = 'year', y="cylinders", title = 'Evolution des cylindrées dans le temps, par continent',
+            labels = {'year': 'Période', 'continent': 'Continent', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
+            fig1.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+
 
 
 

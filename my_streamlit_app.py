@@ -116,9 +116,9 @@ def main():
         st.write("---------------------------------------------------------")
 
         st.subheader("Présentation du dataset") # add a subtitle
-        
-        describe = df.describe(include="all")
-        st.table(describe)
+        st.dataframe(df)
+        #describe = df.describe(include="all")
+        #st.table(describe)
 
         st.write("La colonne 'mpg' représente la consommation de carburant en miles/gallon (mesure impériale)" )
         st.write("La colonne 'cylinders' correspond au nombre de cylindres de la voiture" )

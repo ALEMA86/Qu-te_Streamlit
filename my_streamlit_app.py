@@ -139,9 +139,9 @@ def main():
         st.write("")
         st.write("")
 
-        st.subheader("Détails du dataset") # add a subtitle
-        df_describe = df.describe(include="all")
-        st.dataframe(df_describe)
+        #st.subheader("Détails du dataset") # add a subtitle
+        #df_describe = df.describe(include="all")
+        #st.dataframe(df_describe)
         st.write("")
         st.write("")
         st.write("")

@@ -1,7 +1,7 @@
+streamlit
 numpy
 seaborn
 pandas
-streamlit
+matplotlib
 plotly
 pip
-matplotlib

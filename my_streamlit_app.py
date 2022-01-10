@@ -131,6 +131,7 @@ def main():
                 """
             )
 
+        st.subheader("Evolution des cylindrées dans le temps, par continent") # add a subtitle
         col1, col2 = st.columns([1, 2])
         with col1:
             # Variables to insert df_input inside the multiselect menu
@@ -142,3 +143,19 @@ def main():
             data = df[mask_movies]
 
         with col2:
+            fig = px.bar(df, x = 'year', y="continent", text ='cylinders', color = 'continent',
+            title = 'Evolution des cylindrées dans le temps, par continent',
+            labels = {'year': 'Période', 'continent': 'Continent'},
+            orientation='h',
+            animation_frame="year",
+            range_x=[0,150],
+            range_y=[0,6],
+            width=800, height=500)
+        
+            fig.update_traces(textfont_size=12, textposition='outside')
+            fig.update_layout(template='plotly_dark')
+            fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
+
+            fig.update_layout(showlegend=False, title_x=0.5)
+
+            st.plotly_chart(fig)

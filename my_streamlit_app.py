@@ -62,3 +62,43 @@ def main():
     # Menu and Sidebar creation
     menu = ["Consignes Challenge", "Analyses"]
     choice = st.sidebar.selectbox("", menu)
+
+
+
+
+######################################################################################
+######################################################################################
+######################     Consignes Challenge     ###################################
+######################################################################################
+######################################################################################
+    if choice == "Consignes Challenge":
+                # CSS code within markdown to center the title
+        st.markdown("<h1 style='text-align: center;'>Consignes Challenge</h1>", unsafe_allow_html=True)
+                # This create a nice grey line between the title and the multiselect menu
+        st.write("---------------------------------------------------------")
+        st.subheader('')
+        st.subheader("Challenge")
+
+        st.markdown(
+        """
+        A partir du [dataset des voitures](https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv), tu afficheras :
+
+        - une analyse de corrélation et de distribution grâce à différents graphiques et des commentaires.
+        - des boutons doivent être présents pour pouvoir filtrer les résultats par région (US / Europe / Japon).
+        - l'application doit être disponible sur la plateforme de partage.
+
+        Publie ensuite ici le lien de ton application. Le lien doit ressembler à https://share.streamlit.io/wilder/streamlit_app/my_streamlit_app.py.
+
+        """
+        )
+        st.subheader('')
+        st.subheader("Critères de validation")
+
+        st.markdown(
+        """
+        - L'application est accessible en ligne
+        - L'analyse est effectuée, avec des commentaires explicatifs
+        - Des boutons sont présents pour filtrer par région
+        
+        """
+        )

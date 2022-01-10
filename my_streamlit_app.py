@@ -14,6 +14,22 @@ import plotly.graph_objects as go
 import ipywidgets as widgets
 
 
+######################################################################################
+######################################################################################
+###########################     CSS CODE   ###########################################
+######################################################################################
+######################################################################################
+
+# CSS code to hide footer and header automatically installed on streamlit page
+# I keep the main menu so people can switch from dark to light and vice versa
+hide_menu= """
+<style>
+    #MainMenu {visibility:visible;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+
+</style>
+"""
 
 
 

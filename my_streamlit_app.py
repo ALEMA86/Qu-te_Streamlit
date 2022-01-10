@@ -114,11 +114,18 @@ def main():
         st.markdown("<h1 style='text-align: center;'>Analyses</h1>", unsafe_allow_html=True)
                 # This create a nice grey line between the title and the multiselect menu
         st.write("---------------------------------------------------------")
+        st.write("")
+        st.write("")
 
+
+        
         st.subheader("Présentation du dataset") # add a subtitle
         st.dataframe(df)
-        #describe = df.describe(include="all")
-        #st.table(describe)
+        st.write("")
+        st.write("")
+        st.write("")
+
+
 
         st.write("La colonne 'mpg' représente la consommation de carburant en miles/gallon (mesure impériale)" )
         st.write("La colonne 'cylinders' correspond au nombre de cylindres de la voiture" )
@@ -128,6 +135,18 @@ def main():
         st.write("La colonne 'time-to-60' se rapporte au temps en seconde pour passer du 0 à 60 miles/h, soit l'équivalent du 0 à 100 km/h" )
         st.write("La colonne 'year ' correspond à l'année de commercialisation du véhicule" )
         st.write("La colonne 'continent' correspond à la région dont le véhicule est originaire ; nous en avons ici 3 : les USA, l'Europe et le Japon" )
+        st.write("")
+        st.write("")
+        st.write("")
+
+
+        describe = df.describe(include="all")
+        st.table(describe)
+
+
+        st.write("")
+        st.write("")
+        st.write("")
 
         st.subheader("Présentation du dataset par 'continent'") # add a subtitle
         continent = df['continent'].unique()

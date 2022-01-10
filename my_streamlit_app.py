@@ -118,7 +118,7 @@ def main():
         st.write("")
 
 
-        
+
         st.subheader("Présentation du dataset") # add a subtitle
         st.dataframe(df)
         st.write("")
@@ -140,8 +140,8 @@ def main():
         st.write("")
 
 
-        describe = df.describe(include="all")
-        st.table(describe)
+        #describe = df.describe(include="all")
+        st.table(df.describe(include="all"))
 
 
         st.write("")

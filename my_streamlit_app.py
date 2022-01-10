@@ -118,11 +118,9 @@ def main():
         # Paramétrage des données pour faire la heatmap de corrélation :
         corr = df.corr()
 
-        fig = px.imshow(corr, text_auto=True, color_continuous_scale='RdBu_r', origin='upper', aspect = "auto")
-        fig.update_layout(
-        title='Heatmap de corrélation',
-        xaxis_nticks=36)
-        fig.show()
+        heatmap = px.imshow(corr, text_auto=True, color_continuous_scale='RdBu_r', origin='upper', aspect = "auto")
+        heatmap.update_layout(title='Heatmap de corrélation', xaxis_nticks=36)
+        st.plotly_chart(heatmap)
 
         st.markdown(
                 """
@@ -143,11 +141,7 @@ def main():
             data = df[mask_movies]
 
         with col2:
-            fig = px.bar(df, x = 'year', y="cylinders", color = 'continent',
-            title = 'Evolution des cylindrées dans le temps, par continent',
-            labels = {'year': 'Période', 'continent': 'Continent', 'cylinders' : 'Nb de cylindres'},
-            width=800, height=600)
-
-            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-
-            st.plotly_chart(fig)
+            fig1 = px.bar(df, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
+            labels = {'year': 'Période', 'continent': 'Continent', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
+            fig1.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            st.plotly_chart(fig1)

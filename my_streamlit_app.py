@@ -116,6 +116,10 @@ def main():
         st.write("---------------------------------------------------------")
 
         st.subheader("Présentation du dataset") # add a subtitle
+        
+        describe = df.describe(include="all")
+        st.dataframe( data = describe)
+
         st.write("La colonne 'mpg' représente la consommation de carburant en miles/gallon (mesure impériale)" )
         st.write("La colonne 'cylinders' correspond au nombre de cylindres de la voiture" )
         st.write("La colonne 'cubinches' correspond à la cylindrée en cubic inches, sachant que 122 cubic inches correspond à 2 litres" )

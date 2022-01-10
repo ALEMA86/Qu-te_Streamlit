@@ -214,9 +214,12 @@ def main():
 
 
         with col2:
-            cylinders_per_yr = df[['year', 'cylinders'.isin(continent_multiselect2), 'continent']]
+            cylinders_per_yr = ""
+            cylinders_per_yr['Année'] = df['year']
+            cylinders_per_yr['Nb de Cylindres'] = df[(df['cylinders'].isin(continent_multiselect2))]
+            
             fig1 = st.bar_chart(cylinders_per_yr, x = 'year', y="cylinders", title = 'Evolution des cylindrées dans le temps, par continent',
-            labels = {'year': 'Période', 'continent': 'Continent', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
+            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
             fig1.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
 
 

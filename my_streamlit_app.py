@@ -118,7 +118,7 @@ def main():
         st.subheader("Présentation du dataset") # add a subtitle
         
         describe = df.describe(include="all")
-        st.dataframe( data = describe)
+        st.dataframe( describe)
 
         st.write("La colonne 'mpg' représente la consommation de carburant en miles/gallon (mesure impériale)" )
         st.write("La colonne 'cylinders' correspond au nombre de cylindres de la voiture" )
@@ -157,7 +157,6 @@ def main():
                     -   hp
                     -   weightlbs
                 - il y a corrélation entre la colonne 'time_to_60' et la colonne 'hp'
-
                 """
             )
 

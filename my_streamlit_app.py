@@ -142,7 +142,7 @@ def main():
 
         describe = df.describe(include="all")
         describe_df = pd.DataFrame(data = describe)
-        st.table(describe_df)
+        st.dataframe(describe_df)
         st.write("")
         st.write("")
         st.write("")

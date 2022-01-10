@@ -139,10 +139,9 @@ def main():
         st.write("")
         st.write("")
 
-
-        describe = df.describe(include="all")
-        describe_df = pd.DataFrame(data = describe)
-        st.dataframe(describe_df)
+        st.subheader("Détails du dataset") # add a subtitle
+        df_describe = df.describe(include="all")
+        st.dataframe(df_describe)
         st.write("")
         st.write("")
         st.write("")
@@ -153,7 +152,9 @@ def main():
 
 
 
-
+        st.write("")
+        st.write("")
+        st.write("")
 
 
         st.subheader("Heatmap de corrélation") # add a subtitle
@@ -165,6 +166,10 @@ def main():
         heatmap = px.imshow(corr, text_auto=True, color_continuous_scale='RdBu_r', origin='upper', aspect = "auto")
         heatmap.update_layout(title='Heatmap de corrélation', xaxis_nticks=36)
         st.plotly_chart(heatmap)
+        st.write("")
+        st.write("")
+        st.write("")
+
 
         st.markdown(
                 """
@@ -177,11 +182,33 @@ def main():
                 - il y a corrélation entre la colonne 'time_to_60' et la colonne 'hp'
                 """
             )
+        st.write("")
+        st.write("")
+        st.write("")
+
+        st.subheader("Production de voitures par région") # add a subtitle
+
+
+        st.write("")
+        st.write("")
+        st.write("")
+
+
+        st.subheader("Evolution de la production de voitures dans le temps, par continent") # add a subtitle
+            continent = df['continent'].unique()
+            continent_multiselect = st.multiselect(' ', continent)
+
+        st.write("")
+        st.write("")
+        st.write("")
+
+
+
 
         st.subheader("Evolution des cylindrées dans le temps, par continent") # add a subtitle
         col1, col2 = st.columns([1, 2])
         with col1:
-            # Variables to insert df_input inside the multiselect menu
+            # Variables to insert df inside the multiselect menu
             continent = df['continent'].unique()
             continent_multiselect = st.multiselect(' ', continent)
 

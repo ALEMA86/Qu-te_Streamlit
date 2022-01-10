@@ -143,19 +143,11 @@ def main():
             data = df[mask_movies]
 
         with col2:
-            fig = px.bar(df, x = 'year', y="continent", text ='cylinders', color = 'continent',
+            fig = px.bar(df, x = 'year', y="cylinders", color = 'continent',
             title = 'Evolution des cylindrées dans le temps, par continent',
-            labels = {'year': 'Période', 'continent': 'Continent'},
-            orientation='h',
-            animation_frame="year",
-            range_x=[0,150],
-            range_y=[0,6],
-            width=800, height=500)
-        
-            fig.update_traces(textfont_size=12, textposition='outside')
-            fig.update_layout(template='plotly_dark')
-            fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
+            labels = {'year': 'Période', 'continent': 'Continent', 'cylinders' : 'Nb de cylindres'},
+            width=800, height=600)
 
-            fig.update_layout(showlegend=False, title_x=0.5)
+            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
 
             st.plotly_chart(fig)

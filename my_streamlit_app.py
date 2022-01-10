@@ -145,3 +145,9 @@ def main():
             labels = {'year': 'Période', 'continent': 'Continent', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
             fig1.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(fig1)
+
+
+
+
+
+main()

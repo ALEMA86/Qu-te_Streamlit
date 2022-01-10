@@ -142,5 +142,3 @@ def main():
             data = df[mask_movies]
 
         with col2:
-
-        

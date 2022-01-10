@@ -132,7 +132,7 @@ def main():
             )
 
         col1, col2 = st.columns([1, 2])
-            with col1:
+        with col1:
             # Variables to insert df_input inside the multiselect menu
             continent = df['continent'].unique()
             continent_select = st.multiselect(' ', continent)
@@ -141,6 +141,6 @@ def main():
             mask_movies = df['continent'].isin(continent_select)
             data = df[mask_movies]
 
-            with col2:
+        with col2:
 
         

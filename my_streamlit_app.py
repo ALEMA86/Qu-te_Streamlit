@@ -111,6 +111,9 @@ def main():
 
 
     elif choice == "Analyses":
+        st.markdown("<h1 style='text-align: center;'>Analyses</h1>", unsafe_allow_html=True)
+                # This create a nice grey line between the title and the multiselect menu
+        st.write("---------------------------------------------------------")
 
         st.subheader("Heatmap de corrélation") # add a subtitle
 
@@ -134,14 +137,15 @@ def main():
         with col1:
             # Variables to insert df_input inside the multiselect menu
             continent = df['continent'].unique()
-            continent_select = st.multiselect(' ', continent)
+            continent_multiselect = st.multiselect(' ', continent)
 
             # Mask to filter dataframe
-            mask_movies = df['continent'].isin(continent_select)
-            data = df[mask_movies]
+            mask_continent = df['continent'].isin(continent_multiselect)
+            data = df[mask_continent]
 
         with col2:
-            fig1 = px.bar(df, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
+            cylinders_per_yr = df[['year', 'cylinders', 'continent']]
+            fig1 = px.bar(cylinders_per_yr, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
             labels = {'year': 'Période', 'continent': 'Continent', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
             fig1.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(fig1)

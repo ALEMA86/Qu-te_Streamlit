@@ -53,17 +53,6 @@ df = pd.read_csv('https://raw.githubusercontent.com/murpi/wilddata/master/quests
 
 #set the page layout to automatically use full horoizontal size + get and icon and name inside the internet browser
 st.set_page_config(page_title="Quête Streamlit", page_icon=":chart_with_upwards_trend:")
-
-
-def main():
-    # This is used to activate the CSS code at the top
-    st.markdown(hide_menu, unsafe_allow_html=True)
-    
-    
-    # Menu and Sidebar creation
-    menu = ["Consignes Challenge", "Analyses"]
-    choice = st.sidebar.selectbox("", menu)
-
 def _max_width_():
     max_width_str = "max-width: 1300px;"
     st.markdown(
@@ -78,6 +67,17 @@ def _max_width_():
     )
 
 _max_width_()
+
+def main():
+    # This is used to activate the CSS code at the top
+    st.markdown(hide_menu, unsafe_allow_html=True)
+    
+    
+    # Menu and Sidebar creation
+    menu = ["Consignes Challenge", "Analyses"]
+    choice = st.sidebar.selectbox("", menu)
+
+
 
 
 ######################################################################################

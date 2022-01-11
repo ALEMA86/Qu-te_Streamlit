@@ -54,7 +54,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/murpi/wilddata/master/quests
 #set the page layout to automatically use full horoizontal size + get and icon and name inside the internet browser
 st.set_page_config(page_title="Quête Streamlit", page_icon=":chart_with_upwards_trend:")
 def _max_width_():
-    max_width_str = "max-width: 1300px;"
+    max_width_str = "max-width: 1400px;"
     st.markdown(
         f"""
     <style>
@@ -218,11 +218,11 @@ def main():
         continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
         df_boxplot = df.query('continent in @continent_multiselect2')
         
-        col1, col2, col3 = st.columns([3,1,3])
+        col1, col2, col3 = st.columns([4,1,4])
         with col1:
             box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
             title = 'Distribution des données de la colonne "mpg", par continent',
-            labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=600, height=480)
+            labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=650, height=500)
             box_mpg.update_layout(showlegend=True, title_x=0.2, yaxis={'visible': True}, template='plotly_dark')
             box_mpg.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
@@ -236,7 +236,7 @@ def main():
         with col3:
             box_cylinders = px.box(df_boxplot, x = 'year', y="cylinders", color = 'continent', 
             title = 'Distribution des données de la colonne "cylinders", par continent',
-            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=600, height=480)
+            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=650, height=650)
             box_cylinders.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_cylinders.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))

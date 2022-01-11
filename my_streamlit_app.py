@@ -230,7 +230,7 @@ def main():
             box_cubicinches.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(box_cubicinches)
             st.write("")
-            st.write("Les plus grosses cylindrées ont été produites au USA.")    
+            st.write("Les plus grosses cylindrées ont été produites aux USA.")    
             st.write("La plus petite cylindrée est Européenne (68 cubic inches). Elle a été produite en 1974.")   
             st.write("Les plus petites cylindrées sont généralement Japonnaises.") 
 
@@ -241,6 +241,8 @@ def main():
             labels = {'year': 'Période', 'hp' : 'Puissance (en chevaux)'},width=700, height=500)
             box_hp.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(box_hp)
+            st.write("")
+            st.write("Les voitures ayant le plus de chevaux sont produites aux USA.")   
         st.write("")
         st.write("")
 
@@ -251,6 +253,9 @@ def main():
             labels = {'year': 'Période', 'weightlbs ' : 'Poids (en livres)'},width=700, height=500)
             box_weightlbs.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(box_weightlbs)
+            st.write("")
+            st.write("Les voitures ayant le plus de lourdes sont produites aux USA.") 
+            st.write("Le poids des voitures Européennes et Japonnaises sont plutôt équivalents dans l'ensemble. Cependant, on peut remarquer que la voiture la plus légère est Japonnaise") 
 
         with col3:
             box_chrono = px.box(df_boxplot, x = 'year', y="time-to-60", color = 'continent', 
@@ -258,7 +263,9 @@ def main():
             labels = {'year': 'Période', 'time-to-60' : 'Temps (en secondes) pour passer du 0 à 60 miles/h'},width=700, height=500)
             box_chrono.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(box_chrono)
-
+            st.write("")
+            st.write("Les voitures qui mettent le plus de temps à attendre 60 miles sont Américaines.")  
+            st.write("Celles qui mettent le moins de temps à les atteindre sont majoritairement Européennes.") 
         st.write("")
         st.write("")
         st.write("")

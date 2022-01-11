@@ -129,7 +129,7 @@ def main():
 
         st.write("La colonne 'mpg' représente la consommation de carburant en miles/gallon (mesure impériale)" )
         st.write("La colonne 'cylinders' correspond au nombre de cylindres de la voiture" )
-        st.write("La colonne 'cubinches' correspond à la cylindrée en cubic inches, sachant que 122 cubic inches correspond à 2 litres" )
+        st.write("La colonne 'cubicinches' correspond à la cylindrée en cubic inches, sachant que 122 cubic inches correspond à 2 litres" )
         st.write("La colonne 'hp' se rapporte à la puissance en chevaux du véhicule" )
         st.write("La colonne 'weightlbs ' correspond au poids du véhicule en livres, sachant que 1 livre équivaut à 0.454 kg)" )
         st.write("La colonne 'time-to-60' se rapporte au temps en seconde pour passer du 0 à 60 miles/h, soit l'équivalent du 0 à 100 km/h" )
@@ -228,13 +228,13 @@ def main():
 
         col1, col2 = st.columns([1,1])
         with col1:
-            box_cubinches = px.box(df_boxplot, x = 'year', y="cubinches", color = 'continent', 
-            title = 'Distribution des données de la colonne "cubinches", par continent',
-            labels = {'year': 'Période', 'cubinches' : 'Cylindrée en cubic inches'},width=800, height=600)
-            box_cubinches.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            box_cubinches.update_layout(legend=dict(title_font_family="Times New Roman",
+            box_cubicinches = px.box(df_boxplot, x = 'year', y='cubicinches', color = 'continent', 
+            title = 'Distribution des données de la colonne "cubicinches", par continent',
+            labels = {'year': 'Période', 'cubicinches' : 'Cylindrée en cubic inches'},width=800, height=600)
+            box_cubicinches.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_cubicinches.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
-            st.plotly_chart(box_cubinches)
+            st.plotly_chart(box_cubicinches)
 
         with col2:
             box_hp = px.box(df_boxplot, x = 'year', y="hp", color = 'continent', 

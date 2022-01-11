@@ -230,7 +230,7 @@ def main():
         with col1:
             box_cubinches = px.box(df_boxplot, x = 'year', y="cubinches", color = 'continent', 
             title = 'Distribution des données de la colonne "cubinches", par continent',
-            labels = {'year': 'Période', 'cylinders' : 'Cylindrée en cubic inches'},width=800, height=600)
+            labels = {'year': 'Période', 'cubinches' : 'Cylindrée en cubic inches'},width=800, height=600)
             box_cubinches.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_cubinches.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))

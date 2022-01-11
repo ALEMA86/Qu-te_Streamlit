@@ -275,7 +275,7 @@ def main():
 
         st.subheader("Analyse globale")
         st.write("")
-        st.write(" Analyse ")
+        st.write(" Au regard des résultats obtenus précedemment, et des corrélations mises en avant par la heatmap, nous pouvons supposer que plus il y a de cylindres dans le moteur, plus la voiture est puissante. Cependant, cela alourdit le poids de la voiture, la rendant moins rapide.  Aussi, nous pouvons conclure que plus la voiture est lourde et puissante, plus elle consommera.")
 
         st.write("")
         st.write("")

@@ -191,10 +191,12 @@ def main():
         df_boxplot = df.query('continent in @continent_multiselect2')
         st.write("")
         st.write("")
-        fig_new_models = px.bar(df_boxplot, x = 'year', color = 'continent', title = 'Nombre de nouveaux modèles dans le temps, par région', 
-        labels = {'year': 'Période'},width=700, height=600)
-        fig_new_models.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-        st.plotly_chart(fig_new_models)
+        col1 = st.columns([1])
+        with col1:
+            fig_new_models = px.bar(df_boxplot, x = 'year', color = 'continent', title = 'Nombre de nouveaux modèles dans le temps, par région', 
+            labels = {'year': 'Période'},width=700, height=600)
+            fig_new_models.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            st.plotly_chart(fig_new_models)
         st.write("")
         st.write("")
         st.write("")

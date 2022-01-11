@@ -284,7 +284,7 @@ def main():
 
 
         st.header("Evolution des cylindrées dans le temps, par continent") # add a subtitle
-        col1, col2 = st.columns([1, 2])
+        col1, col2 = st.columns([1, 5])
         with col1:
             # Variables to insert df inside the multiselect menu
             continent = df['continent'].unique()

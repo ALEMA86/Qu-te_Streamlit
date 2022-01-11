@@ -153,22 +153,6 @@ def main():
         st.write("")
         st.write("")
 
-        #st.subheader("Détails du dataset") # add a subtitle
-        #df_describe = df.describe(include="all")
-        #st.dataframe(df_describe)
-        st.write("")
-        st.write("")
-        st.write("")
-
-        st.subheader("Présentation du dataset par 'continent'") # add a subtitle
-        continent = df['continent'].unique()
-        continent_multiselect = st.multiselect(' ', continent)
-
-
-
-        st.write("")
-        st.write("")
-        st.write("")
 
 
         st.subheader("Heatmap de corrélation") # add a subtitle
@@ -294,7 +278,7 @@ def main():
             # Variables to insert df inside the multiselect menu
             continent = df['continent'].unique()
             continent_multiselect2 = st.multiselect('Filtre sur la région ', continent)
-
+            st.write(" Analyse ")
 
         with col2:
             cylinders_per_yr = pd.DataFrame()

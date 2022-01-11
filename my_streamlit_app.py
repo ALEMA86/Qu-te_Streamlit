@@ -204,7 +204,7 @@ def main():
         continent_multiselect2 = st.multiselect('Filtre sur la région ', continent3)
         df_boxplot = df.query('continent in @continent_multiselect2')
         
-        col1, col2, col3 = st.columns([1,1,1])
+        col1, col2 = st.columns([1,1])
         with col1:
             box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
             title = 'Distribution des données de la colonne "mpg", par continent',
@@ -222,8 +222,12 @@ def main():
             box_cylinders.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_cylinders)
+        st.write("")
+        st.write("")
 
-        with col2:
+
+        col1, col2 = st.columns([1,1])
+        with col1:
             box_cubinches = px.box(df_boxplot, x = 'year', y="cubinches", color = 'continent', 
             title = 'Distribution des données de la colonne "cubinches", par continent',
             labels = {'year': 'Période', 'cylinders' : 'Cylindrée en cubic inches'},width=800, height=600)
@@ -231,6 +235,19 @@ def main():
             box_cubinches.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_cubinches)
+
+        with col2:
+            box_hp = px.box(df_boxplot, x = 'year', y="hp", color = 'continent', 
+            title = 'Distribution des données de la colonne "cylinders", par continent',
+            labels = {'year': 'Période', 'hp' : 'Puissance (en chevaux)'},width=800, height=600)
+            box_hp.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_hp.update_layout(legend=dict(title_font_family="Times New Roman",
+                              font=dict(size= 20)))
+            st.plotly_chart(box_hp)
+        st.write("")
+        st.write("")
+
+
 
         st.write("")
         st.write("")

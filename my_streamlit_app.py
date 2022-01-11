@@ -191,7 +191,7 @@ def main():
         df_boxplot = df.query('continent in @continent_multiselect2')
         st.write("")
         st.write("")
-        col1 = st.columns([1])
+        col1,col2 = st.columns([14,1])
         with col1:
             fig_new_models = px.bar(df_boxplot, x = 'year', color = 'continent', title = 'Nombre de nouveaux modèles dans le temps, par région', 
             labels = {'year': 'Période'},width=700, height=600)

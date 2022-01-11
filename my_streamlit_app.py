@@ -236,7 +236,7 @@ def main():
         with col3:
             box_cylinders = px.box(df_boxplot, x = 'year', y="cylinders", color = 'continent', 
             title = 'Distribution des données de la colonne "cylinders", par continent',
-            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=650, height=650)
+            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=650, height=500)
             box_cylinders.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_cylinders.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))

@@ -90,8 +90,8 @@ def main():
         st.markdown("<h1 style='text-align: center;'>Consignes Challenge</h1>", unsafe_allow_html=True)
                 # This create a nice grey line between the title and the multiselect menu
         st.write("---------------------------------------------------------")
-        st.subheader('')
-        st.subheader("Challenge")
+        st.header('')
+        st.header("Challenge")
 
         st.markdown(
         """
@@ -105,8 +105,8 @@ def main():
 
         """
         )
-        st.subheader('')
-        st.subheader("Critères de validation")
+        st.header('')
+        st.header("Critères de validation")
 
         st.markdown(
         """
@@ -133,7 +133,7 @@ def main():
 
 
 
-        st.subheader("Présentation du dataset") # add a subtitle
+        st.header("Présentation du dataset") # add a subtitle
         st.dataframe(df)
         st.write("")
         st.write("")
@@ -155,7 +155,7 @@ def main():
 
 
 
-        st.subheader("Heatmap de corrélation") # add a subtitle
+        st.header("Heatmap de corrélation") # add a subtitle
 
 
         # Paramétrage des données pour faire la heatmap de corrélation :
@@ -186,7 +186,7 @@ def main():
 
 
 
-        st.subheader("Profil des différentes données, par continent") # add a subtitle
+        st.header("Profil des différentes données, par continent") # add a subtitle
         st.write("")
         st.write("")
         # Variables to insert df inside the multiselect menu
@@ -194,8 +194,11 @@ def main():
         continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
         df_boxplot = df.query('continent in @continent_multiselect2')
 
+        st.subheader("Graphiques")
+        st.write("")
+        st.write("")
 
-        
+
         col1, col2, col3 = st.columns([7,1,7])
         with col1:
             box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
@@ -268,12 +271,19 @@ def main():
             st.write("Celles qui mettent le moins de temps à les atteindre sont majoritairement Européennes.") 
         st.write("")
         st.write("")
+
+
+        st.subheader("Analyse globale")
+        st.write("")
+        st.write(" Analyse ")
+
+        st.write("")
         st.write("")
 
 
 
 
-        st.subheader("Evolution des cylindrées dans le temps, par continent") # add a subtitle
+        st.header("Evolution des cylindrées dans le temps, par continent") # add a subtitle
         col1, col2 = st.columns([1, 2])
         with col1:
             # Variables to insert df inside the multiselect menu

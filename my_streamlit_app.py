@@ -274,7 +274,7 @@ def main():
             box_weightlbs.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(box_weightlbs)
 
-        with col:
+        with col3:
             box_chrono = px.box(df_boxplot, x = 'year', y="time-to-60", color = 'continent', 
             title = 'Distribution des données de la colonne "time-to-60", par continent',
             labels = {'year': 'Période', 'time-to-60' : 'Temps (en secondes) pour passer du 0 à 60 miles/h'},width=700, height=500)

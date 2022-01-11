@@ -216,7 +216,9 @@ def main():
         with col2:
             cylinders_per_yr = pd.DataFrame()
             cylinders_per_yr['year'] = df['year']
-            cylinders_per_yr['cylinders'] = df[(df['cylinders'].isin(continent_multiselect2))]
+            cylinders_per_yr['cylinders'] = df['cylinders']
+            cylinders_per_yr['continent'] = df['continent']
+            cylinders_per_yr = cylinders_per_yr.query('continent in @continent_multiselect2')
             
             #st.bar_chart(cylinders_per_yr)
 

@@ -188,7 +188,7 @@ def main():
         # Variables to insert df inside the multiselect menu
         continent3 = df['continent'].unique()
         continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
-        df_boxplot = df.query('continent in @continent_multiselect2')
+        df_boxplot = px.df.query('continent in @continent_multiselect2')
         st.write("")
         st.write("")
         col1,col2 = st.columns([14,1])

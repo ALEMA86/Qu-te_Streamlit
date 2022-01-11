@@ -218,7 +218,7 @@ def main():
         continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
         df_boxplot = df.query('continent in @continent_multiselect2')
         
-        col1, col2, col3 = st.columns([4,1,4])
+        col1, col2, col3 = st.columns([5,1,5])
         with col1:
             box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
             title = 'Distribution des données de la colonne "mpg", par continent',

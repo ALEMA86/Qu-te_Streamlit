@@ -194,9 +194,43 @@ def main():
         st.write("")
 
 
-        st.subheader("Evolution de la production de voitures dans le temps, par continent") # add a subtitle
-        #continent = df['continent'].unique()
-        #continent_multiselect = st.multiselect(' ', continent)
+        st.subheader("Profil des différentes données, par continent") # add a subtitle
+        st.write("")
+        st.write("")
+
+
+        # Variables to insert df inside the multiselect menu
+        continent3 = df['continent'].unique()
+        continent_multiselect2 = st.multiselect('Filtre sur la région ', continent3)
+        df_boxplot = df.query('continent in @continent_multiselect2')
+        
+        col1, col2, col3 = st.columns([1,1,1])
+        with col1:
+            box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
+            title = 'Distribution des données de la colonne "mpg", par continent',
+            labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=800, height=600)
+            box_mpg.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_mpg.update_layout(legend=dict(title_font_family="Times New Roman",
+                              font=dict(size= 20)))
+            st.plotly_chart(box_mpg)
+
+        with col2:
+            box_cylinders = px.box(df_boxplot, x = 'year', y="cylinders", color = 'continent', 
+            title = 'Distribution des données de la colonne "cylinders", par continent',
+            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
+            box_cylinders.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_cylinders.update_layout(legend=dict(title_font_family="Times New Roman",
+                              font=dict(size= 20)))
+            st.plotly_chart(box_cylinders)
+
+        with col2:
+            box_cubinches = px.box(df_boxplot, x = 'year', y="cubinches", color = 'continent', 
+            title = 'Distribution des données de la colonne "cubinches", par continent',
+            labels = {'year': 'Période', 'cylinders' : 'Cylindrée en cubic inches'},width=800, height=600)
+            box_cubinches.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_cubinches.update_layout(legend=dict(title_font_family="Times New Roman",
+                              font=dict(size= 20)))
+            st.plotly_chart(box_cubinches)
 
         st.write("")
         st.write("")

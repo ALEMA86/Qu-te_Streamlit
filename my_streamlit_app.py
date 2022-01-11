@@ -222,7 +222,7 @@ def main():
             
             #st.bar_chart(cylinders_per_yr)
 
-            fig1 = px.bar(cylinders_per_yr, x = 'year', y="cylinders", title = 'Evolution des cylindrées dans le temps, par continent',
+            fig1 = px.bar(cylinders_per_yr, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
             labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
             fig1.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(fig1)

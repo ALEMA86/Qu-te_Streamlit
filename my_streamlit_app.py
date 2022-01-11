@@ -54,7 +54,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/murpi/wilddata/master/quests
 #set the page layout to automatically use full horoizontal size + get and icon and name inside the internet browser
 st.set_page_config(page_title="Quête Streamlit", page_icon=":chart_with_upwards_trend:")
 def _max_width_():
-    max_width_str = "max-width: 1400px;"
+    max_width_str = "max-width: 1500px;"
     st.markdown(
         f"""
     <style>
@@ -218,12 +218,12 @@ def main():
         continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
         df_boxplot = df.query('continent in @continent_multiselect2')
         
-        col1, col2, col3 = st.columns([5,1,5])
+        col1, col2, col3 = st.columns([6,1,6])
         with col1:
             box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
             title = 'Distribution des données de la colonne "mpg", par continent',
             labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=650, height=500)
-            box_mpg.update_layout(showlegend=True, title_x=0.2, yaxis={'visible': True}, template='plotly_dark')
+            box_mpg.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_mpg.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_mpg)
@@ -248,7 +248,7 @@ def main():
         st.write("")
 
 
-        col1, col2 = st.columns([1,1])
+        col1, col2, col3 = st.columns([5,1,5])
         with col1:
             box_cubicinches = px.box(df_boxplot, x = 'year', y='cubicinches', color = 'continent', 
             title = 'Distribution des données de la colonne "cubicinches", par continent',
@@ -263,32 +263,32 @@ def main():
             st.write("Les plus petites cylindrées sont généralement Japonnaises.") 
 
 
-        with col2:
+        with col3:
             box_hp = px.box(df_boxplot, x = 'year', y="hp", color = 'continent', 
             title = 'Distribution des données de la colonne "hp", par continent',
             labels = {'year': 'Période', 'hp' : 'Puissance (en chevaux)'},width=800, height=600)
-            box_hp.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_hp.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_hp.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_hp)
         st.write("")
         st.write("")
 
-        col1, col2 = st.columns([1,1])
+        col1, col2, col3 = st.columns([5,1,5])
         with col1:
             box_weightlbs  = px.box(df_boxplot, x = 'year', y="weightlbs", color = 'continent', 
             title = 'Distribution des données de la colonne "weightlbs ", par continent',
             labels = {'year': 'Période', 'weightlbs ' : 'Poids (en livres)'},width=800, height=600)
-            box_weightlbs.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_weightlbs.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_weightlbs.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_weightlbs)
 
-        with col2:
+        with col:
             box_chrono = px.box(df_boxplot, x = 'year', y="time-to-60", color = 'continent', 
             title = 'Distribution des données de la colonne "time-to-60", par continent',
             labels = {'year': 'Période', 'time-to-60' : 'Temps (en secondes) pour passer du 0 à 60 miles/h'},width=800, height=600)
-            box_chrono.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_chrono.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_chrono.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_chrono)

@@ -127,7 +127,7 @@ def main():
 
 
 
-        st.write("La colonne 'mpg' représente la consommation de carburant en miles/gallon (mesure impériale)" )
+        st.write("La colonne 'mpg' représente le nombre de miles parcourus par gallon de carburant (mesure impériale que l'on peut mettre en parallèle à notre km/litre)" )
         st.write("La colonne 'cylinders' correspond au nombre de cylindres de la voiture" )
         st.write("La colonne 'cubicinches' correspond à la cylindrée en cubic inches, sachant que 122 cubic inches correspond à 2 litres" )
         st.write("La colonne 'hp' se rapporte à la puissance en chevaux du véhicule" )
@@ -213,6 +213,11 @@ def main():
             box_mpg.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_mpg)
+            st.write("")
+            st.write("La voiture qui consomme le plus est Japonnaise. On peut parcourir 10 miles par gallon consommé. Elle a été commercialisée en 1971.")
+            st.write("On remarque que les voitures Japonnaises sont celles qui consomment le plus en moyenne.")
+            st.write("Celle qui consomme le moins est Européenne. Elle a été commercialisée en 1981. On peut parcourir 46.6 miles pour 1 gallon consommé")
+            st.write("La consommation des voitures Européennes et Américaines sont plutôt comparables dans le temps.")
 
         with col2:
             box_cylinders = px.box(df_boxplot, x = 'year', y="cylinders", color = 'continent', 
@@ -222,6 +227,9 @@ def main():
             box_cylinders.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_cylinders)
+            st.write("")
+            st.write("Les voitures Japonnaises sont celles qui comportent le plus de cylindres en comparaison avec les autres voitures.")    
+            st.write("Les plus petites cylindrées sont Européennes.")        
         st.write("")
         st.write("")
 

@@ -283,30 +283,5 @@ def main():
 
 
 
-        st.header("Evolution des cylindrées dans le temps, par continent") # add a subtitle
-        col1, col2 = st.columns([1, 5])
-        with col1:
-            # Variables to insert df inside the multiselect menu
-            continent = df['continent'].unique()
-            continent_multiselect2 = st.multiselect('Filtre sur la région ', continent)
-            st.write(" Analyse ")
-
-        with col2:
-            cylinders_per_yr = pd.DataFrame()
-            cylinders_per_yr['year'] = df['year']
-            cylinders_per_yr['cylinders'] = df['cylinders']
-            cylinders_per_yr['continent'] = df['continent']
-            cylinders_per_yr = cylinders_per_yr.query('continent in @continent_multiselect2')
-            
-
-            fig_cyl = px.bar(cylinders_per_yr, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
-            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=1000, height=600)
-            fig_cyl.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-
-            st.plotly_chart(fig_cyl)
-
-
-
-
 
 main()

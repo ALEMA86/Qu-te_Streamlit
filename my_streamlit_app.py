@@ -206,14 +206,14 @@ def main():
 
 
         st.subheader("Evolution des cylindrées dans le temps, par continent") # add a subtitle
-        col1, col2 = st.columns([1, 2])
-        with col1:
+        #col1, col2 = st.columns([1, 2])
+        #with col1:
             # Variables to insert df inside the multiselect menu
             continent = df['continent'].unique()
             continent_multiselect2 = st.multiselect('Filtre sur la région ', continent)
 
 
-        with col2:
+        #with col2:
             cylinders_per_yr = pd.DataFrame()
             cylinders_per_yr['year'] = df['year']
             cylinders_per_yr['cylinders'] = df['cylinders']

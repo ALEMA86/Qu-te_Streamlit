@@ -262,7 +262,7 @@ def main():
 
         col1, col2 = st.columns([1,1])
         with col1:
-            box_weightlbs  = px.box(df_boxplot, x = 'year', y="weightlbs ", color = 'continent', 
+            box_weightlbs  = px.box(df_boxplot, x = 'year', y="weightlbs", color = 'continent', 
             title = 'Distribution des données de la colonne "weightlbs ", par continent',
             labels = {'year': 'Période', 'weightlbs ' : 'Poids (en livres)'},width=800, height=600)
             box_weightlbs.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')

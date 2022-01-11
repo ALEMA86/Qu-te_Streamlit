@@ -238,7 +238,7 @@ def main():
 
         with col2:
             box_hp = px.box(df_boxplot, x = 'year', y="hp", color = 'continent', 
-            title = 'Distribution des données de la colonne "cylinders", par continent',
+            title = 'Distribution des données de la colonne "hp", par continent',
             labels = {'year': 'Période', 'hp' : 'Puissance (en chevaux)'},width=800, height=600)
             box_hp.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_hp.update_layout(legend=dict(title_font_family="Times New Roman",
@@ -247,7 +247,24 @@ def main():
         st.write("")
         st.write("")
 
+        col1, col2 = st.columns([1,1])
+        with col1:
+            box_weightlbs  = px.box(df_boxplot, x = 'year', y="weightlbs ", color = 'continent', 
+            title = 'Distribution des données de la colonne "weightlbs ", par continent',
+            labels = {'year': 'Période', 'weightlbs ' : 'Poids (en livres)'},width=800, height=600)
+            box_weightlbs.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_weightlbs.update_layout(legend=dict(title_font_family="Times New Roman",
+                              font=dict(size= 20)))
+            st.plotly_chart(box_weightlbs)
 
+        with col2:
+            box_chrono = px.box(df_boxplot, x = 'year', y="time-to-60", color = 'continent', 
+            title = 'Distribution des données de la colonne "time-to-60", par continent',
+            labels = {'year': 'Période', 'time-to-60' : 'Temps (en secondes) pour passer du 0 à 60 miles/h'},width=800, height=600)
+            box_chrono.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            box_chrono.update_layout(legend=dict(title_font_family="Times New Roman",
+                              font=dict(size= 20)))
+            st.plotly_chart(box_chrono)
 
         st.write("")
         st.write("")

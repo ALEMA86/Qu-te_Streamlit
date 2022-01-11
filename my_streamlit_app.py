@@ -204,7 +204,7 @@ def main():
         continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
         df_boxplot = df.query('continent in @continent_multiselect2')
         
-        col1, col2 = st.columns([1,1])
+        col1, col2, col3 = st.columns([3,1,3])
         with col1:
             box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
             title = 'Distribution des données de la colonne "mpg", par continent',
@@ -219,7 +219,7 @@ def main():
             st.write("Celle qui consomme le moins est Japonnaise. Elle a été commercialisée en 1981. On peut parcourir 46.6 miles pour 1 gallon consommé")
             st.write("La consommation des voitures Européennes et Japonnaises sont plutôt comparables dans le temps.")
 
-        with col2:
+        with col3:
             box_cylinders = px.box(df_boxplot, x = 'year', y="cylinders", color = 'continent', 
             title = 'Distribution des données de la colonne "cylinders", par continent',
             labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=800, height=600)

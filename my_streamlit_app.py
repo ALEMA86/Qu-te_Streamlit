@@ -206,26 +206,27 @@ def main():
 
 
         st.subheader("Evolution des cylindrées dans le temps, par continent") # add a subtitle
-        #col1, col2 = st.columns([1, 2])
-        #with col1:
-        # Variables to insert df inside the multiselect menu
-        continent = df['continent'].unique()
-        continent_multiselect2 = st.multiselect('Filtre sur la région ', continent)
+        col1, col2 = st.columns([1, 2])
+        with col1:
+            # Variables to insert df inside the multiselect menu
+            continent = df['continent'].unique()
+            continent_multiselect2 = st.multiselect('Filtre sur la région ', continent)
 
 
-        #with col2:
-        cylinders_per_yr = pd.DataFrame()
-        cylinders_per_yr['year'] = df['year']
-        cylinders_per_yr['cylinders'] = df['cylinders']
-        cylinders_per_yr['continent'] = df['continent']
-        cylinders_per_yr = cylinders_per_yr.query('continent in @continent_multiselect2')
+        with col2:
+            cylinders_per_yr = pd.DataFrame()
+            cylinders_per_yr['year'] = df['year']
+            cylinders_per_yr['cylinders'] = df['cylinders']
+            cylinders_per_yr['continent'] = df['continent']
+            cylinders_per_yr = cylinders_per_yr.query('continent in @continent_multiselect2')
             
-            #st.bar_chart(cylinders_per_yr)
 
-        fig1 = px.bar(cylinders_per_yr, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
-        labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
-        fig1.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-        st.plotly_chart(fig1)
+            fig_cyl = px.bar(cylinders_per_yr, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
+            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
+            fig_cyl.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            fig_cyl.update_layout(legend=dict(title_font_family="Times New Roman",
+                              font=dict(size= 20)))
+            st.plotly_chart(fig_cyl)
 
 
 

@@ -218,11 +218,11 @@ def main():
         continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
         df_boxplot = df.query('continent in @continent_multiselect2')
         
-        col1, col2, col3 = st.columns([6,1,6])
+        col1, col2, col3 = st.columns([7,1,7])
         with col1:
             box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
             title = 'Distribution des données de la colonne "mpg", par continent',
-            labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=700, height=500)
+            labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=700, height=600)
             box_mpg.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_mpg.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
@@ -236,7 +236,7 @@ def main():
         with col3:
             box_cylinders = px.box(df_boxplot, x = 'year', y="cylinders", color = 'continent', 
             title = 'Distribution des données de la colonne "cylinders", par continent',
-            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=700, height=500)
+            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=700, height=600)
             box_cylinders.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_cylinders.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
@@ -248,11 +248,11 @@ def main():
         st.write("")
 
 
-        col1, col2, col3 = st.columns([5,1,5])
+        col1, col2, col3 = st.columns([7,1,7])
         with col1:
             box_cubicinches = px.box(df_boxplot, x = 'year', y='cubicinches', color = 'continent', 
             title = 'Distribution des données de la colonne "cubicinches", par continent',
-            labels = {'year': 'Période', 'cubicinches' : 'Cylindrée en cubic inches'},width=800, height=600)
+            labels = {'year': 'Période', 'cubicinches' : 'Cylindrée en cubic inches'},width=700, height=600)
             box_cubicinches.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_cubicinches.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
@@ -266,7 +266,7 @@ def main():
         with col3:
             box_hp = px.box(df_boxplot, x = 'year', y="hp", color = 'continent', 
             title = 'Distribution des données de la colonne "hp", par continent',
-            labels = {'year': 'Période', 'hp' : 'Puissance (en chevaux)'},width=800, height=600)
+            labels = {'year': 'Période', 'hp' : 'Puissance (en chevaux)'},width=700, height=600)
             box_hp.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_hp.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
@@ -274,11 +274,11 @@ def main():
         st.write("")
         st.write("")
 
-        col1, col2, col3 = st.columns([5,1,5])
+        col1, col2, col3 = st.columns([7,1,7])
         with col1:
             box_weightlbs  = px.box(df_boxplot, x = 'year', y="weightlbs", color = 'continent', 
             title = 'Distribution des données de la colonne "weightlbs ", par continent',
-            labels = {'year': 'Période', 'weightlbs ' : 'Poids (en livres)'},width=800, height=600)
+            labels = {'year': 'Période', 'weightlbs ' : 'Poids (en livres)'},width=700, height=600)
             box_weightlbs.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_weightlbs.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
@@ -287,7 +287,7 @@ def main():
         with col:
             box_chrono = px.box(df_boxplot, x = 'year', y="time-to-60", color = 'continent', 
             title = 'Distribution des données de la colonne "time-to-60", par continent',
-            labels = {'year': 'Période', 'time-to-60' : 'Temps (en secondes) pour passer du 0 à 60 miles/h'},width=800, height=600)
+            labels = {'year': 'Période', 'time-to-60' : 'Temps (en secondes) pour passer du 0 à 60 miles/h'},width=700, height=600)
             box_chrono.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_chrono.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
@@ -317,7 +317,7 @@ def main():
             
 
             fig_cyl = px.bar(cylinders_per_yr, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
-            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
+            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=700, height=600)
             fig_cyl.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             fig_cyl.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))

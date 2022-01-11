@@ -224,8 +224,6 @@ def main():
             title = 'Distribution des données de la colonne "mpg", par continent',
             labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=700, height=600)
             box_mpg.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            box_mpg.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 20)))
             st.plotly_chart(box_mpg)
             st.write("")
             st.write("La voiture qui consomme le plus est Américaine. On peut parcourir 10 miles par gallon consommé. Elle a été commercialisée en 1971.")
@@ -238,8 +236,6 @@ def main():
             title = 'Distribution des données de la colonne "cylinders", par continent',
             labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=700, height=600)
             box_cylinders.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            box_cylinders.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 20)))
             st.plotly_chart(box_cylinders)
             st.write("")
             st.write("Les voitures Américaines sont celles qui comportent le plus de cylindres en comparaison avec les autres voitures.")    
@@ -254,8 +250,6 @@ def main():
             title = 'Distribution des données de la colonne "cubicinches", par continent',
             labels = {'year': 'Période', 'cubicinches' : 'Cylindrée en cubic inches'},width=700, height=600)
             box_cubicinches.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            box_cubicinches.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 20)))
             st.plotly_chart(box_cubicinches)
             st.write("")
             st.write("Les plus grosses cylindrées ont été produites au USA.")    
@@ -268,8 +262,6 @@ def main():
             title = 'Distribution des données de la colonne "hp", par continent',
             labels = {'year': 'Période', 'hp' : 'Puissance (en chevaux)'},width=700, height=600)
             box_hp.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            box_hp.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 20)))
             st.plotly_chart(box_hp)
         st.write("")
         st.write("")
@@ -280,8 +272,6 @@ def main():
             title = 'Distribution des données de la colonne "weightlbs ", par continent',
             labels = {'year': 'Période', 'weightlbs ' : 'Poids (en livres)'},width=700, height=600)
             box_weightlbs.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            box_weightlbs.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 20)))
             st.plotly_chart(box_weightlbs)
 
         with col:
@@ -289,8 +279,6 @@ def main():
             title = 'Distribution des données de la colonne "time-to-60", par continent',
             labels = {'year': 'Période', 'time-to-60' : 'Temps (en secondes) pour passer du 0 à 60 miles/h'},width=700, height=600)
             box_chrono.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            box_chrono.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 20)))
             st.plotly_chart(box_chrono)
 
         st.write("")
@@ -318,9 +306,8 @@ def main():
 
             fig_cyl = px.bar(cylinders_per_yr, x = 'year', y="cylinders", color = 'continent', title = 'Evolution des cylindrées dans le temps, par continent',
             labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=700, height=600)
-            fig_cyl.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            fig_cyl.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 20)))
+            fig_cyl.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+
             st.plotly_chart(fig_cyl)
 
 

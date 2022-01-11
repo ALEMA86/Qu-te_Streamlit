@@ -214,10 +214,10 @@ def main():
                               font=dict(size= 20)))
             st.plotly_chart(box_mpg)
             st.write("")
-            st.write("La voiture qui consomme le plus est Japonnaise. On peut parcourir 10 miles par gallon consommé. Elle a été commercialisée en 1971.")
-            st.write("On remarque que les voitures Japonnaises sont celles qui consomment le plus en moyenne.")
-            st.write("Celle qui consomme le moins est Européenne. Elle a été commercialisée en 1981. On peut parcourir 46.6 miles pour 1 gallon consommé")
-            st.write("La consommation des voitures Européennes et Américaines sont plutôt comparables dans le temps.")
+            st.write("La voiture qui consomme le plus est Américaine. On peut parcourir 10 miles par gallon consommé. Elle a été commercialisée en 1971.")
+            st.write("On remarque que les voitures Américaines sont celles qui consomment le plus en moyenne.")
+            st.write("Celle qui consomme le moins est Japonnaise. Elle a été commercialisée en 1981. On peut parcourir 46.6 miles pour 1 gallon consommé")
+            st.write("La consommation des voitures Européennes et Japonnaises sont plutôt comparables dans le temps.")
 
         with col2:
             box_cylinders = px.box(df_boxplot, x = 'year', y="cylinders", color = 'continent', 
@@ -228,8 +228,8 @@ def main():
                               font=dict(size= 20)))
             st.plotly_chart(box_cylinders)
             st.write("")
-            st.write("Les voitures Japonnaises sont celles qui comportent le plus de cylindres en comparaison avec les autres voitures.")    
-            st.write("Les plus petites cylindrées sont Européennes.")        
+            st.write("Les voitures Américaines sont celles qui comportent le plus de cylindres en comparaison avec les autres voitures.")    
+            st.write("Celles qui ont le moins de cylindres sont Japonnaises.")        
         st.write("")
         st.write("")
 
@@ -243,6 +243,11 @@ def main():
             box_cubicinches.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
             st.plotly_chart(box_cubicinches)
+            st.write("")
+            st.write("Les plus grosses cylindrées ont été produites au USA.")    
+            st.write("La plus petite cylindrée est Européenne (68 cubic inches). Elle a été produite en 1974.")   
+            st.write("Les plus petites cylindrées sont généralement Japonnaises.") 
+
 
         with col2:
             box_hp = px.box(df_boxplot, x = 'year', y="hp", color = 'continent', 

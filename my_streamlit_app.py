@@ -184,28 +184,15 @@ def main():
         st.write("")
         st.write("")
 
-        st.subheader("Production de nouveaux modèles de voitures par région") # add a subtitle
-        # Variables to insert df inside the multiselect menu
-        continent3 = df['continent'].unique()
-        continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
-        df_boxplot = px.df.query('continent in @continent_multiselect2')
-        st.write("")
-        st.write("")
-        col1,col2 = st.columns([14,1])
-        with col1:
-            fig_new_models = px.bar(df_boxplot, x = 'year', y = 'count', color = 'continent', title = 'Nombre de nouveaux modèles dans le temps, par région', 
-            labels = {'year': 'Période'},width=700, height=600)
-            fig_new_models.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            st.plotly_chart(fig_new_models)
-        st.write("")
-        st.write("")
-        st.write("")
 
 
         st.subheader("Profil des différentes données, par continent") # add a subtitle
         st.write("")
         st.write("")
-
+        # Variables to insert df inside the multiselect menu
+        continent3 = df['continent'].unique()
+        continent_multiselect2 = st.multiselect('Filtre sur la région', continent3)
+        df_boxplot = df.query('continent in @continent_multiselect2')
 
 
         

@@ -42,6 +42,20 @@ hide_menu= """
 
 df = pd.read_csv('https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv')
 
+def _max_width_():
+    max_width_str = "max-width: 1300px;"
+    st.markdown(
+        f"""
+    <style>
+    .reportview-container .main .block-container{{
+        {max_width_str}
+    }}
+    </style>    
+    """,
+        unsafe_allow_html=True,
+    )
+
+_max_width_()
 
 ######################################################################################
 ######################################################################################
@@ -208,7 +222,7 @@ def main():
         with col1:
             box_mpg = px.box(df_boxplot, x = 'year', y="mpg", color = 'continent', 
             title = 'Distribution des données de la colonne "mpg", par continent',
-            labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=800, height=600)
+            labels = {'year': 'Période', 'mpg' : 'Consommation en litres'},width=600, height=480)
             box_mpg.update_layout(showlegend=True, title_x=0.2, yaxis={'visible': True}, template='plotly_dark')
             box_mpg.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))
@@ -222,7 +236,7 @@ def main():
         with col3:
             box_cylinders = px.box(df_boxplot, x = 'year', y="cylinders", color = 'continent', 
             title = 'Distribution des données de la colonne "cylinders", par continent',
-            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=800, height=600)
+            labels = {'year': 'Période', 'cylinders' : 'Nb de cylindres'},width=600, height=480)
             box_cylinders.update_layout(showlegend=True, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             box_cylinders.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 20)))

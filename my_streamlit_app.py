@@ -42,20 +42,7 @@ hide_menu= """
 
 df = pd.read_csv('https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv')
 
-def _max_width_():
-    max_width_str = "max-width: 1300px;"
-    st.markdown(
-        f"""
-    <style>
-    .reportview-container .main .block-container{{
-        {max_width_str}
-    }}
-    </style>    
-    """,
-        unsafe_allow_html=True,
-    )
 
-_max_width_()
 
 ######################################################################################
 ######################################################################################
@@ -77,7 +64,20 @@ def main():
     menu = ["Consignes Challenge", "Analyses"]
     choice = st.sidebar.selectbox("", menu)
 
+def _max_width_():
+    max_width_str = "max-width: 1300px;"
+    st.markdown(
+        f"""
+    <style>
+    .reportview-container .main .block-container{{
+        {max_width_str}
+    }}
+    </style>    
+    """,
+        unsafe_allow_html=True,
+    )
 
+_max_width_()
 
 
 ######################################################################################

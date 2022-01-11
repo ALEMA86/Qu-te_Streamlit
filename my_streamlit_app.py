@@ -65,7 +65,7 @@ _max_width_()
 
 
 #set the page layout to automatically use full horoizontal size + get and icon and name inside the internet browser
-st.set_page_config(page_title="Quête Streamlit", page_icon=":chart_with_upwards_trend:", layout='wide')
+st.set_page_config(page_title="Quête Streamlit", page_icon=":chart_with_upwards_trend:")
 
 
 def main():
